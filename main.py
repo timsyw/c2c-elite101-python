@@ -1,16 +1,4 @@
 
-"""
-    Welcome to Elite 101 this program is a starter for your chatbot project.
-    The starter prompts the user to enter their name and then greets them with a personalized message.
-
-    Functions:
-        get_user_name(): Prompts the user to enter their name and returns it.
-        greet_user(name): Prints a greeting message using the provided name.
-        main(): Main function that orchestrates the user input and greeting process.
-
-    Execution:
-        When the script is run directly (not imported as a module), it will execute the main() function.
-"""
 
 initial_menu_list = ["1. Calculator. ", "2. FAQ.", "3. How to Donate.", "4. Exit Program"]
 
@@ -20,7 +8,19 @@ def get_user_name():
     return input("For starters, what is your name?: ")
 
 def get_user_age(user_name1):
-    return input(f"Nice to meet you {user_name1}, what is your age?: ")
+    user_age = int(input(f"Nice to meet you {user_name1}, what is your age?: "))
+    if user_age < 18:
+        out_string = "You are not an adult yet! Almost there!"
+        return out_string
+    if 24 >= user_age >= 18:
+        out_string = "You are Gen Z, you are destined for Greatness!"
+        return out_string
+    if 64 >= user_age > 24:
+        out_string = "You are almost at retirement, you will get there someday."
+        return out_string
+    if user_age > 64:
+        out_string = "Retirement is here!"
+        return out_string
 
 def main_list1():
     print("Please pick an option below to proceed:\n")
@@ -48,15 +48,18 @@ def check_if_exit(user_input_pathway):
 
 
 def main():
+    loop = True
+    while loop:
+        user_name = get_user_name()
+        user_age_string = get_user_age(user_name)
+        print(user_age_string)
+        user_pathway = main_list1()
+        did_user_exit = check_if_exit(user_pathway)
 
-
-    user_name = get_user_name()
-    user_age = get_user_age(user_name)
-    print(f"Really cool that you are {user_age}, anybody can code at any age!")
-    user_pathway = main_list1()
-    did_user_exit = check_if_exit(user_pathway)
-    if did_user_exit:
-        print("Goodbye. Come again later!")
+        print("\n\n\n")
+        if did_user_exit:
+            print("Goodbye. Come again later!")
+            loop = False
 
 
 
