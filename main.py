@@ -13,15 +13,23 @@
 """
 
 
-def get_user_name():
-    return input("Please enter your name: ")
+print("Welcome to Tim Sywulka ChatBot v0.01!")
 
-def greet_user(name):
-    print(f"Hello, {name}!")
+def get_user_name():
+    return input("For starters, what is your name?: ")
+
+def get_user_age(user_name1):
+    return input(f"Nice to meet you {user_name1}, what is your age?: ")
+
+
 
 def main():
+
+
     user_name = get_user_name()
-    greet_user(user_name)
+    user_age = get_user_age(user_name)
+    
+
 
 if __name__ == "__main__":
     main()
