@@ -12,7 +12,7 @@
         When the script is run directly (not imported as a module), it will execute the main() function.
 """
 
-initial_menu_list = ["1. Calculator. ", "2. Tell me a joke!", "3. Tell me a fun fact!", "4. Exit Program"]
+initial_menu_list = ["1. Calculator. ", "2. FAQ.", "3. How to Donate.", "4. Exit Program"]
 
 print("Welcome to Tim Sywulka ChatBot v0.01!")
 
